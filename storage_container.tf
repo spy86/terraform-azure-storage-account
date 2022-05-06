@@ -6,4 +6,6 @@ resource "azurerm_storage_container" "st_container" {
   name                  = each.value
   storage_account_name  = "${var.storage_account_name}"
   container_access_type = "private"
+
+depends_on = [ "azurerm_storage_account.azstorageaccount" ] 
 }

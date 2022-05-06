@@ -6,4 +6,6 @@ resource "azurerm_storage_queue" "main" {
 
   name                 = each.value
   storage_account_name = "${var.storage_account_name}"
+
+depends_on = [ "azurerm_storage_account.azstorageaccount" ] 
 }
