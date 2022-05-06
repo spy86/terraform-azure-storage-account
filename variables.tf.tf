@@ -6,15 +6,9 @@ variable "environment" {
   type = string
   default = "dev"
 }
-variable "tag_environment" {
+variable "default_tags" {
   description = "A mapping of tags to assign to the resource."
-  type = string
-  default = "dev"
-}
-variable "tag_owner" {
-  description = "A mapping of tags to assign to the resource."
-  type = string
-  default = "Test organization"
+  type = map
 }
 variable "region" {
   description = "Region in which resources are deployed"
@@ -62,5 +56,23 @@ variable "containers_enabled" {
 }
 variable "storage_container_name" {
   description = "The name of the Container's which should be created within the Storage Account."
+  type        = set(string)
+}
+variable "queue_enabled" {
+  description = "Defines whether the storage should be empty or whether queue should be created"
+  type = string
+  default = "false"
+}
+variable "storage_queue_name" {
+  description = "The name of the Queue's which should be created within the Storage Account."
+  type        = set(string)
+}
+variable "table_enabled" {
+  description = "Defines whether the storage should be empty or whether table should be created"
+  type = string
+  default = "false"
+}
+variable "storage_table_name" {
+  description = "The name of the Tables's which should be created within the Storage Account."
   type        = set(string)
 }
