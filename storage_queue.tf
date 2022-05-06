@@ -5,7 +5,7 @@ resource "azurerm_storage_queue" "main" {
   }
 
   name                 = each.value
-  storage_account_name = "${var.storage_account_name}"
+  storage_account_name = "${var.environment}${var.storage_account_name}${var.region}"
 
 depends_on = [ "azurerm_storage_account.azstorageaccount" ] 
 }
