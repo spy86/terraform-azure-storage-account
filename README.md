@@ -49,7 +49,11 @@ No modules.
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_id"></a> [id](#output\_id) | The ID of the Storage Account. |
+| <a name="output_primary_access_key"></a> [primary\_access\_key](#output\_primary\_access\_key) | The primary access key for the storage account. |
+| <a name="output_secondary_access_key"></a> [secondary\_access\_key](#output\_secondary\_access\_key) | The secondary access key for the storage account. |
 <!-- END_TF_DOCS -->
 
 ## How to use
@@ -57,7 +61,7 @@ No outputs.
 ```
 module "storage-account" {
   source  = "spy86/storage-account/azure"
-  version = "1.0.1"
+  version = "1.0.5"
   resource_group_name = "weu-test-rg"
   storage_account_name = "609ae79b3d32"  
   environment = "dev"
