@@ -59,6 +59,10 @@ No modules.
 ## How to use
 
 ```
+provider "azurerm" {
+features {}
+}
+
 module "storage-account" {
   source  = "spy86/storage-account/azure"
   version = "1.0.5"
