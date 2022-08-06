@@ -55,38 +55,3 @@ No modules.
 | <a name="output_primary_access_key"></a> [primary\_access\_key](#output\_primary\_access\_key) | The primary access key for the storage account. |
 | <a name="output_secondary_access_key"></a> [secondary\_access\_key](#output\_secondary\_access\_key) | The secondary access key for the storage account. |
 <!-- END_TF_DOCS -->
-
-## How to use
-
-```
-provider "azurerm" {
-features {}
-}
-
-module "storage-account" {
-  source  = "spy86/storage-account/azure"
-  version = "1.0.5"
-  resource_group_name = "weu-test-rg"
-  storage_account_name = "609ae79b3d32"  
-  environment = "dev"
-  region = "weu"
-  resource_group_location = "West Europe"
-  storage_min_tls_version = "TLS1_2"
-  storage_replication_type = "LRS"
-  storage_tier = "Standard"
-  containers_enabled = "true"
-  storage_container_name = ["container01", "container02"]
-  queue_enabled = "true"
-  storage_queue_name = ["queue01", "queue02"]
-  table_enabled = "true"
-  storage_table_name = ["table01", "table02"]
-
-  default_tags = {
-      Administrator = "Someone"
-      Department = "IT"
-      CostCentre = "ABC123"
-      ContactPerson = "Someone@example.com"
-      ManagedByTerraform = "True"
-}
-}
-```

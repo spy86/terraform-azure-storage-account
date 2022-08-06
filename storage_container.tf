@@ -7,5 +7,5 @@ resource "azurerm_storage_container" "st_container" {
   storage_account_name  = "${var.environment}${var.storage_account_name}${var.region}"
   container_access_type = "private"
 
-depends_on = [ "azurerm_storage_account.azstorageaccount" ] 
+depends_on = [ azurerm_storage_account.azstorageaccount ] 
 }
